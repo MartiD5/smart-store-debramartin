@@ -1,0 +1,5 @@
+2025-03-18 15:22:24.063 | INFO     | __main__:main:41 - Starting data preparation...
+2025-03-18 15:22:24.063 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/debramartin/ Projects/smart-store-debramartin/data/raw/customers_data.csv.
+2025-03-18 15:22:24.065 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/debramartin/ Projects/smart-store-debramartin/data/raw/products_data.csv.
+2025-03-18 15:22:24.065 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/debramartin/ Projects/smart-store-debramartin/data/raw/sales_data.csv.
+2025-03-18 15:22:24.066 | INFO     | __main__:main:45 - Data preparation complete.
