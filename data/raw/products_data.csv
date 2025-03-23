@@ -7,4 +7,4 @@ ProductID,ProductName,Category,UnitPrice,StockQuantity,SubCategory
 105,football,Sports,19.78,4,Equipment
 106,controller,Electronics,88.98,10,Accessories
 107,jacket,Clothing,67.02,2,Outerwear
-108,protector,Electronics,12.56,-2,Accessories
+108,protector,Electronics,12.56,0,Accessories
