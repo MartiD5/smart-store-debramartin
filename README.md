@@ -156,3 +156,58 @@ git push
 ## Experience
 
 Experience comes from executing these commands frequently after making useful changes to a project. 
+
+## 14. Data Warehouse (DW) Creation and Data Upload
+
+### 14.1 Create and Configure SQLite Database
+1. The SQLite database `smart_sales.db` is created in the `data/dw/` directory.
+2. The schema includes the following tables:
+   - `customer`
+   - `product`
+   - `sale`
+
+### 14.2 Database Schema
+
+#### **customer Table**
+| Column Name       | Data Type  | Description                          |
+|------------------|-----------|--------------------------------------|
+| `customer_id`   | INTEGER (PK) | Unique ID for each customer |
+| `name`          | TEXT       | Customer's full name |
+| `region`        | TEXT       | Region of the customer |
+| `join_date`     | TEXT       | Customer's sign-up date |
+| `loyalty_points` | INTEGER    | Loyalty points accumulated |
+| `preferred_contact_method` | TEXT       | Customer segment (email, text, phone) |
+
+
+#### **product Table**
+| Column Name     | Data Type  | Description                     |
+|----------------|-----------|---------------------------------|
+| `product_id`   | INTEGER (PK) | Unique ID for each product |
+| `product_name` | TEXT       | Name of the product |
+| `category`     | TEXT       | Product category (Electronics, Clothing, etc.) |
+| `unit_price`   | REAL       | Price per unit |
+| `stock_quantity` | INTEGER    | Available stock count |
+| `sub_category`     | TEXT       | Subcategory of product|
+
+#### **sale Table**
+| Column Name       | Data Type  | Description                              |
+|------------------|-----------|------------------------------------------|
+| `transaction_id`       | INTEGER (PK) | Unique sale transaction ID |
+| `customer_id`   | INTEGER (FK) | ID of the customer making the purchase |
+| `product_id`    | INTEGER (FK) | ID of the product sold |
+| `sale_amount`   | REAL       | Sale amount after discount |
+| `sale_date`         | TEXT       | Date of sale |
+| `store_id`     | INTEGER    | Store where the sale occurred |
+| `campaign_id`  | INTEGER    | Marketing campaign ID if applicable |
+| `discount_percent` | REAL  | Discount applied to the sale |
+| `state` | TEXT       | State of sale |
+
+### 14.3 Load Data into the Data Warehouse
+1. Prepared data files are loaded into the SQLite database using `etl_to_dw.py`:
+   ```sh
+   python scripts/etl_to_dw.py
+
+
+![customer DW table](image.png)
+![product DW table](image-1.png)
+![sale DW table](image-2.png)
