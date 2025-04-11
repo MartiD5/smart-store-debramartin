@@ -211,3 +211,118 @@ Experience comes from executing these commands frequently after making useful ch
 ![customer DW table](image.png)
 ![product DW table](image-1.png)
 ![sale DW table](image-2.png)
+# SQLite Data Warehouse
+
+
+## Project Overview
+
+This project involves designing and implementing a **Data Warehouse** using SQLite. It includes:
+
+- Schema creation
+- ETL (Extract, Transform, Load) scripting
+- Data validation and testing
+
+## Database Schema
+
+The schema is designed to support efficient data storage and retrieval. The key components include:
+
+- **Fact Tables**: Stores transactional data.
+- **Dimension Tables**: Contains categorical details for analysis.
+
+## ETL Process
+
+The ETL pipeline follows these stages:
+
+1. **Extract**: Data is sourced from various input sources.
+2. **Transform**: Data is cleaned and formatted to match the schema.
+3. **Load**: Transformed data is inserted into the warehouse.
+
+## Validation & Testing
+
+- **Schema validation** ensures data integrity.
+- **Automated testing** checks for consistency and accuracy.
+- **Performance benchmarking** ensures optimized queries.
+
+## Setup & Installation
+
+To set up the SQLite data warehouse:
+
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/teflxndxn/smart-sales-blessing
+   ```
+2. Install SQLite if not already installed.
+3. Execute the schema script using Python 3:
+   ```sh
+   python3 scripts/etl_to_dw.py
+   ```
+
+## Usage Instructions
+
+- Run ETL scripts using Python or shell scripts.
+- Query data using SQL for reporting and analytics.
+- Validate results with test scripts.
+
+## Database Table Preview
+
+
+![Database Table Preview](images/sales.png)
+## Database Table Preview
+
+
+### Products Table
+![Products Table](images/products.png)
+
+
+### Customers Table
+![Customers Table](images/customer.png)
+
+
+
+### 📊 SQL Queries and Reports
+
+To generate meaningful insights, I used **Spark SQL** to join the three main tables: `sale`, `product`, and `customer`. This allowed me to combine data across the tables—for example, using product categories from the `product` table and region information from the `customer` table—so I could analyze sales more effectively.
+
+One of the key queries I used was to calculate the **total amount spent by each customer**. This involved joining the `sale` and `customer` tables and grouping the data by customer name:
+
+```python
+df_top_customers = spark.sql("""
+SELECT c.name, SUM(s.sale_amount) AS total_spent
+FROM sale s
+JOIN customer c ON s.customer_id = c.customer_id
+GROUP BY c.name
+ORDER BY total_spent DESC
+""")
+```
+This query helped identify the top customers based on how much they spent. I then converted the results into a Pandas DataFrame so I could visualize the data using a bar chart.
+
+Additional queries were used for slicing and dicing the data—such as grouping sales by region and product category, and filtering by date range—to support interactive visualizations and deeper analysis.
+
+### Dashboard Design Choices
+
+For the dashboard, my main design choice was to provide a clear and simple **graphical representation of customers and their total spending**. I used a bar chart to display the top customers based on the total amount they spent, making it easy to compare their spending at a glance.
+
+This approach was chosen because it highlights key insights quickly and visually, which is helpful for identifying high-value customers and understanding spending trends without digging through raw data.
+
+### Screenshot of Spark SQL Schema
+
+![Spark SQL Schema](images/schema.png)
+
+---
+
+### Screenshot of Query Results
+Below are screenshots showing the results of different Spark SQL queries:
+
+**1. Overall Sales Query Result**  
+![Query Result 1](images/query_result.png)
+
+**2. Top Customers Query Result**  
+![Query Result 2](images/query_results.png)
+
+**3. Sales by Category and Region**  
+![Query Result 3](images/query_resultss.png)
+
+---
+
+## Screenshot of Final Dashboard/Charts
+![Final Dashboard](images/dashboard.png)
