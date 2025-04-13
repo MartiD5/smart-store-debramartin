@@ -281,6 +281,77 @@ ORDER BY total_spent DESC
 """)
 
 
+# OLAP Project
 
+
+## 1 - The Business Goal
+
+Analyze the total sales for each region for the summer months to determine future inventory and production needed for individual stores during the summer.
+Examine total sales per month for the year as well as per week to identify any cycles in sales to determine production needed to increase efficiency.
+Use total sales per category and product to identify the contribution of products and categories to the overall sales for the company.  This information can guide marketing and future product offerings for the company.
+
+## 2 - Data Source
+
+
+I used the prepared data files and joined them in Tableau Prep.  Columns used were sale_amount, sale_date, category, region, product_id, and product_name.
+
+## 3 - Tools
+
+I used Tableau Prep and Tableau because I prefer the visualizations and ease of use of Tableau.
+
+## 4 - Workflow & Logic
 ---
+Sales by Region (June-August): dimensions - region, aggregation - sum of sales.  This was sliced to only show sales for the summer months.
+![alt text](image-4.png)
 
+
+Total Sales per Month and Week: dimensions - sales date, aggregation - sum of sales.  This shows a drill down from monthly to weekly.
+![alt text](image-5.png)
+
+
+
+Total Sales by Product and Category: dimensions - product id and category, aggregation - sum of sales.  This shows dicing.
+![alt text](image-6.png)
+
+
+## 5 - Results
+
+![alt text](image-7.png)
+
+
+
+
+More than half of the total sales in the summer months occurs in the East region.
+
+![alt text](image-9.png)
+
+
+
+
+The company sees the highest sales in July and also in February - April.
+
+![alt text](image-10.png)
+
+
+
+
+This visualization shows drilled down data from the previous visualization.
+
+![alt text](image-11.png)
+
+
+
+
+The company makes the largest portion of its sales by selling laptops and have very little sales outside the electronics category.
+
+## 6 - Suggested Business Action
+
+Sales by Region (June-August):  I recommend for the company to plan in the summer months to send extra stock to the stores in the East region to decrease any lost sales from items being out of stock.
+
+Sales by Month and Week:  I recommend using this data to calculate needed production rates to builda surplus during slower months to help avoid any out of stock issues in the stores in July, February, March, and April.
+
+Total Sales by Product and Category:  I recommend the company analyze the sales for the clothing and sports categories and align future goals.  If they want to expand those categories, I would recommend more marketing in hopes of boosting sales.  The company has the majority of sales in electronics and specifically in laptops.
+
+## 7 - Challenges
+
+I had to refamiliarize myself with Tableau but it came back quickly.  I did not have any issued loading the data or creating the visualizations in Tableau.
