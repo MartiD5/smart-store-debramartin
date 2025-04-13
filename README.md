@@ -269,16 +269,6 @@ To set up the SQLite data warehouse:
 
 To generate meaningful insights, I used **Spark SQL** to join the three main tables: `sale`, `product`, and `customer` to combine data across the tables.
 
-One of the key queries I used was to calculate the **total amount spent by each customer**. This involved joining the `sale` and `customer` tables and grouping the data by customer name:
-
-```python
-df_top_customers = spark.sql("""
-SELECT c.name, SUM(s.sale_amount) AS total_spent
-FROM sale s
-JOIN customer c ON s.customer_id = c.customer_id
-GROUP BY c.name
-ORDER BY total_spent DESC
-""")
 
 
 # OLAP Project
