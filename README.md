@@ -345,3 +345,45 @@ Total Sales by Product and Category:  I recommend the company analyze the sales 
 ## 7 - Challenges
 
 I had to refamiliarize myself with Tableau but it came back quickly.  I did not have any issued loading the data or creating the visualizations in Tableau.
+
+
+# Final Project
+
+
+## Section 1 The Business Goal
+
+The business goal I wish to solve is a dashboard for a fantasy football consulting company.  Their customer's need a quick dashboard in order to make unaided decisions during their fantasy football draft.
+
+## Section 2 Data Source
+
+I found an interesting football dataset on Kaggle that can be found here:
+https://www.kaggle.com/datasets/jpmiller/nfl-competition-data
+
+## Section 3 Tools Used
+
+Tableau prep and Tableau for the data prep and visualizations.  I used GitHub to document the project.
+
+## Section 4 Workflow & Logic
+
+I used Tableau prep to prepare the data and used Tableau to find creative ways to slice and dice the data to provide useful information for the dashbaoard.  I used multi-dimensonal analysis to provide insights that were easy to overlook when looking at the data as a whole.  I then used those charts to make a dashboard.
+
+## Section 5 Results
+
+![alt text](image-12.png)
+
+
+
+Total Yards by postition and fantasy points shows how to align a players total yards to predict their contribution to fantasy points.  Average fantasy points per position graph shows the different points values that are awarded to the different positions on the field.  Total Rushing and Receiving shows the offensive breakdown for the top 5 players in the league and number of offensive players in each age group shows how age could effect the players performance.
+
+## Section 6 Suggested Business Action
+
+My suggestion to the business would be to make a dashboard like this available to the customers for use at all times to help with the customer's draft processes and provide statistics for customers to make better individual decisions.  If this dashboard can be backed by real time data, then this dashboard could generate constant income for the business with a minor amount of upkeep.  
+An example of the benfit to the customer would be to analyze that quarterbacks have more yards for each fantasy point whereas the other positions are more similar.  Also, the information that quarterback have a considerable higher fantasy point value compared to tight ends would be useful for customers when considering historical statistics.
+
+## Section 7 Challenges
+
+I did not have many technical challenges so I would say the most challenging was trying to find creative ways to slice and dice the data and add as many dimensions in the visualizations without them being too confusing.
+
+## Section 8 Ethical Considerations
+
+If I were recommending this dashboard to a company, I would be sure to use the official data provided by the NFL for its use.  This reduces any issues related to data being incomplete or biased.  This data is public so there is no concern for data privacy.  The only ethical consideration is how this data and fantasy football interacts with sports betting.  I would want to ensure that the dashboard would be used in an ethical way regarding gambling.
